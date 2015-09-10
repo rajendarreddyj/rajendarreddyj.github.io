@@ -4,8 +4,14 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+var thisYear = new Date().getFullYear(),
+    startYear = '2014';
+if (thisYear > startYear) {
+    $('#copyright').text(thisYear);
+}
+
 // jQuery to collapse the navbar on scroll
-$(window).scroll(function() {
+$(window).scroll(function () {
     if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
     } else {
@@ -14,8 +20,8 @@ $(window).scroll(function() {
 });
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-    $('a.page-scroll').bind('click', function(event) {
+$(function () {
+    $('a.page-scroll').bind('click', function (event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
@@ -25,6 +31,7 @@ $(function() {
 });
 
 // Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
+$('.navbar-collapse ul li a').click(function () {
     $('.navbar-toggle:visible').click();
 });
+
